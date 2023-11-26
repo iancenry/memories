@@ -1,5 +1,12 @@
+/* eslint-disable vue/no-reserved-component-names */
 /* eslint-disable vue/multi-word-component-names */
 import './assets/main.css';
+
+//primevue
+import PrimeVue from 'primevue/config';
+import InputText from 'primevue/inputtext';
+import Button from 'primevue/button';
+import Avatar from 'primevue/avatar';
 
 import { createApp } from 'vue';
 import { createPinia } from 'pinia';
@@ -7,21 +14,14 @@ import { createPinia } from 'pinia';
 import App from './App.vue';
 import router from './router';
 
-//primevue
-import PrimeVue from 'primevue/config';
-
-import InputText from 'primevue/inputtext';
-import Button from 'primevue/button';
-import InputMask from 'primevue/inputmask';
-
 const app = createApp(App);
 
-app.use(createPinia());
-app.use(router);
-app.use(PrimeVue);
-// eslint-disable-next-line vue/no-reserved-component-names
 app.component('Button', Button);
 app.component('InputText', InputText);
-app.component('InputMask', InputMask);
+app.component('Avatar', Avatar);
+
+app.use(PrimeVue);
+app.use(createPinia());
+app.use(router);
 
 app.mount('#app');

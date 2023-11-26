@@ -18,7 +18,7 @@
 
     <div>
       <label for="email" class="block text-900 font-medium mb-2">Email</label>
-      <InputMask
+      <InputText
         id="email"
         type="email"
         placeholder="Email address"

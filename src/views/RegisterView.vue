@@ -18,7 +18,7 @@
 
     <div>
       <label for="email" class="block text-900 font-medium mb-2">Email</label>
-      <InputMask id="email" type="email" class="w-full mb-3" />
+      <InputText id="email" type="email" class="w-full mb-3" />
 
       <label for="password" class="block text-900 font-medium mb-2"
         >Password</label

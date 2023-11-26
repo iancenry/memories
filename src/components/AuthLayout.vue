@@ -1,5 +1,3 @@
-<script setup></script>
-
 <template>
   <div class="h-screen overflow-hidden">
     <div class="flex flex-row">
