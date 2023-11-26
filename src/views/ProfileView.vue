@@ -1,4 +1,4 @@
-<!-- Edit to show according to user -->
+<!--TODO Edit to show according to user -->
 <script setup>
 import { storeToRefs } from 'pinia';
 import Card from '../components/CardComp.vue';
@@ -6,6 +6,7 @@ import { useMemoryStore } from '../stores/memory';
 import { ref } from 'vue';
 
 import Dialog from 'primevue/dialog';
+import PopUpModal from '../components/PopUpModal.vue';
 
 const visible = ref(false);
 
@@ -24,10 +25,11 @@ memoryStore.getMemories();
 
     <Dialog
       v-model:visible="visible"
-      header="Header"
+      header="Post Memory"
       :style="{ width: '40rem' }"
       :breakpoints="{ '1199px': '75vw', '575px': '90vw' }"
     >
+      <PopUpModal />
     </Dialog>
   </div>
   <section class="grid grid-cols-3 gap-10">
