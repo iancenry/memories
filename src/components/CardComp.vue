@@ -1,8 +1,8 @@
 <template>
   <div class="h-auto shadow-md p-8 flex flex-col">
     <div class="flex flex-row items-center space-x-2 mb-3">
-      <Avatar label="P" size="small" />
-      <span class="font-light text-sm">@username</span>
+      <Avatar :label="user?.username[0].toUpperCase()" size="small" />
+      <span class="font-light text-sm">@{{ user?.username }}</span>
     </div>
 
     <img :src="memory.image" alt="" class="max-h-44 rounded-md" />
@@ -22,6 +22,24 @@
 </template>
 
 <script setup>
-const { memory, likes } = defineProps(['memory', 'likes']);
-console.log(memory.title, likes);
+import { storeToRefs } from 'pinia';
+import { computed } from 'vue';
+
+import { useUserStore } from '../stores/user';
+const { memory } = defineProps(['memory']);
+
+const userStore = useUserStore();
+const { user } = storeToRefs(userStore);
+
+userStore.getUser(memory.user);
+
+const likes = computed(() => {
+  if (memory) {
+    return memory.likes.length;
+  } else {
+    return 0;
+  }
+});
+
+// TODO fix  user fetched too late
 </script>

@@ -2,14 +2,20 @@ import { defineStore } from 'pinia';
 import { ref } from 'vue';
 
 export const useUserStore = defineStore('users', () => {
-  const users = ref([
-    {
-      _id: '60a4b9c9f0c0f2a3a8c1d7e8',
-      username: 'alice',
-      email: 'alice@example.com',
-      password: 'a1b2c3d4', // hashed password
-    },
-  ]);
+  const users = ref([]);
+  const user = ref();
 
-  return { users };
+  async function getUser(id) {
+    if (users.value?.length < 1) {
+      try {
+        const res = await fetch(`http://localhost:8000/users/${id}`);
+        const data = await res.json();
+        user.value = data;
+      } catch (error) {
+        console.error(error);
+      }
+    }
+  }
+
+  return { user, users, getUser };
 });

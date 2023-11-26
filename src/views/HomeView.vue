@@ -5,16 +5,12 @@ import { useMemoryStore } from '../stores/memory';
 
 const memoryStore = useMemoryStore();
 
-const { memories, likeCount } = storeToRefs(memoryStore);
+const { memories } = storeToRefs(memoryStore);
+memoryStore.getMemories();
 </script>
 
 <template>
   <section class="grid grid-cols-3 gap-10">
-    <Card
-      v-for="memory in memories"
-      :key="memory._id"
-      :memory="memory"
-      :likes="likeCount"
-    />
+    <Card v-for="memory in memories" :key="memory._id" :memory="memory" />
   </section>
 </template>
