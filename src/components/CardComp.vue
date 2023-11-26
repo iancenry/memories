@@ -1,3 +1,4 @@
+<!-- YourComponent.vue -->
 <template>
   <div class="h-auto shadow-md p-8 flex flex-col">
     <div class="flex flex-row items-center space-x-2 mb-3">
@@ -8,9 +9,9 @@
     <img :src="memory.image" alt="" class="max-h-44 rounded-md" />
 
     <h4>{{ memory.title }}</h4>
-    <p class="h-16 text-justify">{{ memory.description }}</p>
+    <p class="h-20 text-justify">{{ memory.description }}</p>
 
-    <div class="mt-7 flex justify-between relative bottom-1">
+    <div class="mt-7 flex justify-between">
       <span class="flex items-center gap-1">
         <i
           class="pi 'pi-heart' text-red-400 cursor-pointer"
@@ -26,16 +27,16 @@
 </template>
 
 <script setup>
-import { storeToRefs } from 'pinia';
-import { computed } from 'vue';
+import { computed, ref, onMounted } from 'vue';
+import { getUser } from '../utils/service';
 
-import { useUserStore } from '../stores/user';
 const { memory } = defineProps(['memory']);
+const user = ref();
 
-const userStore = useUserStore();
-const { user } = storeToRefs(userStore);
-
-userStore.getUser(memory.user);
+onMounted(async () => {
+  // Wait for the getUser promise to resolve
+  user.value = await getUser(memory.user);
+});
 
 const likes = computed(() => {
   if (memory) {

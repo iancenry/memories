@@ -6,7 +6,7 @@ import Register from '../views/RegisterView.vue';
 
 import HomeLayout from '../components/HomeLayout.vue';
 import Home from '../views/HomeView.vue';
-const Profile = import('../views/ProfileView.vue');
+import Profile from '../views/ProfileView.vue';
 
 const routes = [
   {
