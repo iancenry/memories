@@ -11,6 +11,6 @@ memoryStore.getMemories();
 
 <template>
   <section class="grid grid-cols-3 gap-10">
-    <Card v-for="memory in memories" :key="memory._id" :memory="memory" />
+    <Card v-for="memory in memories" :key="memory.id" :memory="memory" />
   </section>
 </template>

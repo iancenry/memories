@@ -6,7 +6,11 @@
     </div>
 
     <img :src="memory.image" alt="" class="max-h-44 rounded-md" />
-    <div class="mt-7 flex justify-between">
+
+    <h4>{{ memory.title }}</h4>
+    <p class="h-16 text-justify">{{ memory.description }}</p>
+
+    <div class="mt-7 flex justify-between relative bottom-1">
       <span class="flex items-center gap-1">
         <i
           class="pi 'pi-heart' text-red-400 cursor-pointer"
@@ -40,6 +44,4 @@ const likes = computed(() => {
     return 0;
   }
 });
-
-// TODO fix  user fetched too late
 </script>
