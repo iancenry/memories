@@ -14,4 +14,18 @@ export default {
       password: userData.password,
     });
   },
+  async loginUser(loginData) {
+    // transfer user validation to backend
+    return apiClient.get(`/users`).then((res) => {
+      const users = res.data;
+      const foundUser = users?.filter((user) => loginData.email === user.email);
+  
+      if (foundUser[0].password === loginData.password) {
+        return foundUser;
+      } else {
+        throw Error('password error') 
+      }
+    });
+  }
+  
 };
