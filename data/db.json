@@ -20,12 +20,21 @@
       "title": "My first trip to Paris",
       "description": "I visited Paris last year with my family and had a wonderful time. We saw the Eiffel Tower, the Louvre, and the Notre Dame. It was a memorable experience.",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQv8VfFQ2sjVlZzS_iouWABcSt9T9y6gCezY82NyXMKTQ&s",
-      "likes": ["60a4b9d9f0c0f2a3a8c1d7ea", "60a4b9e9f0c0f2a3a8c1d7eb"],
+      "likes": [
+        "60a4b9d9f0c0f2a3a8c1d7ea",
+        "60a4b9e9f0c0f2a3a8c1d7eb"
+      ],
       "createdAt": "2023-05-18T10:45:30.000Z",
       "updatedAt": "2023-05-18T10:45:30.000Z",
       "tags": [
-        { "_id": 1, "label": "Beach" },
-        { "_id": 2, "label": "Vacation" }
+        {
+          "_id": 1,
+          "label": "Beach"
+        },
+        {
+          "_id": 2,
+          "label": "Vacation"
+        }
       ]
     },
     {
@@ -34,13 +43,12 @@
       "title": "Family Reunion",
       "description": "Gathered with relatives for a joyous family reunion.",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVMAHSupFws-mLAj-61_F3GET158lcHjdVkQ&usqp=CAU",
-      "likes": ["60a4ba0af0c0f2a3a8c1d7e9"],
+      "likes": [
+        "60a4ba0af0c0f2a3a8c1d7e9"
+      ],
       "createdAt": "2023-05-18T10:45:30.000Z",
       "updatedAt": "2023-05-18T10:45:30.000Z",
-      "tags": [
-        { "_id": 1, "label": "Family" },
-        { "_id": 2, "label": "Happy" }
-      ]
+      "tags": ["family", "happy"]
     }
   ],
   "comments": [

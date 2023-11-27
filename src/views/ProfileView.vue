@@ -26,10 +26,9 @@ memoryStore.getMemories();
     <Dialog
       v-model:visible="visible"
       header="Post Memory"
-      :style="{ width: '40rem' }"
-      :breakpoints="{ '1199px': '75vw', '575px': '90vw' }"
+      :style="{ width: '30rem'}"
     >
-      <PopUpModal />
+      <PopUpModal class="" />
     </Dialog>
   </div>
   <section class="grid grid-cols-3 gap-10">

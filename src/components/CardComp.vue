@@ -28,14 +28,15 @@
 
 <script setup>
 import { computed, ref, onMounted } from 'vue';
-import { getUser } from '../utils/service';
-
+import userService from '../utils/userService';
 const { memory } = defineProps(['memory']);
 const user = ref();
 
 onMounted(async () => {
   // Wait for the getUser promise to resolve
-  user.value = await getUser(memory.user);
+  userService.getUser(memory.user).then((data) => {
+    user.value = data.data
+  })
 });
 
 const likes = computed(() => {
